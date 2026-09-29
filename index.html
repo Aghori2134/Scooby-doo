@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scooby-Doo Mystery Adventures</title>
+	<link rel="stylesheet" href="scobi.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(3,15,40,.97), rgba(3,15,40,.65)),
+                url('images/hero.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .card {
+            transition: .35s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px #061b4020;
+        }
+
+        .episode:hover img,
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .episode img,
+        .gallery-item img {
+            transition: transform .5s ease;
+        }
+
+        /* CSS-only mobile menu */
+        #menu-toggle:checked ~ .mobile-menu {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8F8F2] text-[#061B40]">
+    <header class="sticky top-0 z-50 bg-[#061B40] text-white shadow-lg">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+            <a href="#home" class="logo text-3xl md:text-4xl font-bold text-yellow-300">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Scooby_doo_logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" class="w-28">
+            </a>
+
+            <div class="hidden md:flex gap-7 items-center text-sm font-medium text">
+                <a href="#home" class="hover:text-yellow-300">Home</a>
+                <a href="#about" class="hover:text-yellow-300">About</a>
+                <a href="#characters" class="hover:text-yellow-300">Characters</a>
+                <a href="#episodes" class="hover:text-yellow-300">Episodes</a>
+                <a href="#gallery" class="hover:text-yellow-300">Gallery</a>
+                <a href="#facts" class="hover:text-yellow-300">Fun Facts</a>
+            </div>
+
+            <a href="#episodes"
+               class="hidden md:block bg-yellow-300 text-[#061B40] px-5 py-3 rounded-full font-bold hover:bg-white transition">
+                Explore Mysteries →
+            </a>
+            <label for="menu-toggle" class="md:hidden cursor-pointer text-3xl" aria-label="Toggle navigation">
+                ☰
+            </label>
+
+            <input type="checkbox" id="menu-toggle" class="hidden">
+
+            <div class="mobile-menu hidden absolute top-full left-0 w-full bg-[#061B40] p-6 flex-col gap-5 md:hidden shadow-xl">
+                <a href="#home" class="hover:text-yellow-300">Home</a>
+                <a href="#about" class="hover:text-yellow-300">About</a>
+                <a href="#characters" class="hover:text-yellow-300">Characters</a>
+                <a href="#episodes" class="hover:text-yellow-300">Episodes</a>
+                <a href="#gallery" class="hover:text-yellow-300">Gallery</a>
+                <a href="#facts" class="hover:text-yellow-300">Fun Facts</a>
+            </div>
+
+        </nav>
+    </header>
+    <section id="home" class="hero min-h-[650px] flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6 py-24 w-full grid lg:grid-cols-2 gap-12 items-center">
+
+            <div class="text">	
+                <span class="inline-block bg-teal-400/20 text-teal-300 border border-teal-300/40 rounded-full px-4 py-2 text-sm">
+                     Welcome to Mystery Inc.
+                </span>
+
+                <h1 class="text-6xl md:text-8xl text-yellow-300 font-bold mt-6 leading-tight">
+                    Scooby-Doo!
+                </h1>
+
+                <h2 class="text-3xl md:text-4xl mt-4">
+                    Mystery, Laughs & Good Friends!
+                </h2>
+
+                <p class="text-gray-300 leading-8 mt-6 max-w-xl">
+                    Join Scooby-Doo and the gang on unforgettable adventures.
+                    Explore haunted houses, discover hidden clues, and solve
+                    mysterious cases with your favourite detective team.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="#episodes"
+                       class="bg-yellow-300 text-[#061B40] px-7 py-4 rounded-full font-bold hover:bg-white transition">
+                         Explore Episodes
+                    </a>
+
+                    <a href="#characters"
+                       class="border border-white px-7 py-4 rounded-full hover:bg-white hover:text-[#061B40] transition">
+                        Meet The Gang
+                    </a>
+                </div>
+
+                <div class="flex gap-10 mt-10">
+                    <div>
+                        <h3 class="text-3xl text-yellow-300 font-bold">5</h3>
+                        <p class="text-sm text-gray-300">Best Friends</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl text-yellow-300 font-bold">∞</h3>
+                        <p class="text-sm text-gray-300">Adventures</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl text-yellow-300 font-bold">🐾</h3>
+                        <p class="text-sm text-gray-300">Scooby Snacks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="bg-[#E5F0CE] rounded-[2.5rem] p-8 md:p-12 card">
+                <span class="text-teal-700 font-bold uppercase tracking-widest text-sm">
+                    Our Story
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">
+                    Every Mystery Has A Story!
+                </h2>
+
+                <p class="text-gray-700 leading-8 mt-6">
+                    Scooby-Doo and the Mystery Inc. gang travel around solving
+                    unusual cases. They investigate haunted houses, strange
+                    creatures, secret passages and mysterious happenings.
+                </p>
+
+                <p class="text-gray-700 leading-8 mt-4">
+                    With teamwork, courage, clever thinking and a few Scooby
+                    Snacks, the gang discovers the truth behind every mystery.
+                </p>
+
+                <a href="#characters"
+                   class="inline-block bg-[#061B40] text-white px-6 py-3 rounded-full mt-7 hover:bg-teal-600 transition">
+                    Discover The Gang →
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-5">
+                <div class="card bg-yellow-200 p-7 rounded-3xl">
+                    <div class="text-5xl"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQplETkAbPzB0Qr-cjLkWJ0Z6FXmYRh9kYfujecowzflQ&s=10" class="w-28"></div>
+                    <h3 class="text-2xl font-bold mt-4">Find Clues</h3>
+                    <p class="text-sm text-gray-700 mt-2">Every detail can reveal a hidden secret.</p>
+                </div>
+
+                <div class="card bg-purple-200 p-7 rounded-3xl mt-8">
+                    <div class="text-5xl"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ9zTNm5CCrzJfZS4uOySkPOMpB7nXPSHGPRWNLz39eQ&s=10" class="w-28"></div>
+                    <h3 class="text-2xl font-bold mt-4">Face The Fear</h3>
+                    <p class="text-sm text-gray-700 mt-2">Explore strange places and spooky stories.</p>
+                </div>
+
+                <div class="card bg-teal-100 p-7 rounded-3xl">
+                    <div class="text-5xl"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-KPXureWzyKOR4gV5X3eGkcSiiSVLQZlvwuHsXOrayA&s=10" class="w-28"></div>
+                    <h3 class="text-2xl font-bold mt-4">Teamwork</h3>
+                    <p class="text-sm text-gray-700 mt-2">Friends make every challenge easier.</p>
+                </div>
+
+                <div class="card bg-orange-100 p-7 rounded-3xl mt-8">
+                    <div class="text-5xl"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTinNaIXfD0aYCryyWS-0ydZRTKte5F9KUtXzkaxhEbPw&s=10" class="w-28"></div>
+                    <h3 class="text-2xl font-bold mt-4">Snack Time</h3>
+                    <p class="text-sm text-gray-700 mt-2">No adventure is complete without snacks.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="characters" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center max-w-2xl mx-auto mb-14 ani">
+                <h2 class="text-4xl md:text-6xl font-bold mt-3">Meet The Gang</h2>
+                <p class="text-gray-600 mt-4 leading-7">
+                    Five different personalities, one amazing team.
+                    Discover the friends behind every mystery.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+                <div class="card bg-blue-100 rounded-3xl p-6 text-center">
+                    <div class="bg-blue-500 rounded-full w-28 h-28 mx-auto flex items-center justify-center text-6xl">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiE1GkEtOemJYw5gwhOG54IZzmk02JHGutH47mshEog&s=10">
+					</div>
+                    <h3 class="text-2xl font-bold mt-5">Fred</h3>
+                    <p class="text-blue-700 font-semibold text-sm">The Leader</p>
+                    <p class="text-gray-600 text-sm mt-3 leading-6">Plans investigations and leads the team.</p>
+                </div>
+
+                <div class="card bg-orange-100 rounded-3xl p-6 text-center">
+                    <div class=" w-28 h-28 mx-auto flex items-center justify-center text-6xl">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtxdUdQc-cIHuYxIl1OWqBSKMvsmEZ-zPOGvYYpIzL7w&s=10">
+					</div>
+                    <h3 class="text-2xl font-bold mt-5">Daphne</h3>
+                    <p class="text-orange-700 font-semibold text-sm">The Adventurer</p>
+                    <p class="text-gray-600 text-sm mt-3 leading-6">Brings curiosity and courage to each case.</p>
+                </div>
+
+                <div class="card bg-purple-100 rounded-3xl p-6 text-center">
+                    <div class="bg-purple-400 rounded-full w-28 h-28 mx-auto flex items-center justify-center text-6xl">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtD5KhUYeXXsbz2jPmqiEESwtemV2B5PH6JIyd8-GWaA&s=10">
+					</div>
+                    <h3 class="text-2xl font-bold mt-5">Velma</h3>
+                    <p class="text-purple-700 font-semibold text-sm">The Brain</p>
+                    <p class="text-gray-600 text-sm mt-3 leading-6">Uses logic to connect the clues.</p>
+                </div>
+
+                <div class="card bg-green-100 rounded-3xl p-6 text-center">
+                    <div class="bg-green-400 rounded-full w-28 h-28 mx-auto flex items-center justify-center text-6xl">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkh5GC-U9KmunpwSvRb0onpBtkL02Gxe7tOF2JSo01dQ&s=10">
+					</div>
+                    <h3 class="text-2xl font-bold mt-5">Shaggy</h3>
+                    <p class="text-green-700 font-semibold text-sm">The Foodie</p>
+                    <p class="text-gray-600 text-sm mt-3 leading-6">Loves food and funny adventures.</p>
+                </div>
+
+                <div class="card bg-teal-100 rounded-3xl p-6 text-center">
+                    <div class="bg-teal-400 rounded-full w-28 h-28 mx-auto flex items-center justify-center text-6xl">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFCXF_8iEnhS1rfyOy4YuhztTxMDtbRSKwxWv_2YMnw&s=10">
+					</div>
+                    <h3 class="text-2xl font-bold mt-5">Scooby-Doo</h3>
+                    <p class="text-teal-700 font-semibold text-sm">The Lovable Detective</p>
+                    <p class="text-gray-600 text-sm mt-3 leading-6">A loyal friend with a huge appetite.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="episodes" class="bg-[#061B40] text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="mb-12 ani">
+                <span class="text-yellow-300 font-bold uppercase tracking-widest text-sm">
+                    Open Mystery Files
+                </span>
+                <h2 class="text-4xl md:text-6xl font-bold mt-3">Featured Mysteries</h2>
+                <p class="text-gray-300 mt-4">Explore strange places and uncover hidden secrets.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-7">
+
+                <article class="episode bg-[#102D59] rounded-3xl overflow-hidden border border-white/10 card">
+                    <div class="h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2NLPuRzMwtLK8p-_Aj-6ivTG_LBUKL_DOBiO9k2vRFw&s=10"
+                             alt="Mysterious forest">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-yellow-300 text-xs font-bold">CASE 001</span>
+                        <h3 class="text-2xl font-bold mt-2">The Haunted Mansion</h3>
+                        <p class="text-gray-300 text-sm leading-7 mt-3">A creepy house, flickering lights and footsteps in empty hallways.</p>
+                        <a href="#mystery" class="inline-block text-yellow-300 mt-5 font-semibold">Explore Case →</a>
+                    </div>
+                </article>
+
+                <article class="episode bg-[#102D59] rounded-3xl overflow-hidden border border-white/10 card">
+                    <div class="h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5umxuay2-nEhJOboYb71J-CCXT5w5HwLmg2IiYjOkIQ&s=10"
+                             alt="Mysterious landscape">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-teal-300 text-xs font-bold">CASE 002</span>
+                        <h3 class="text-2xl font-bold mt-2">The Ghostly Forest</h3>
+                        <p class="text-gray-300 text-sm leading-7 mt-3">Strange sounds echo through the woods after the sun goes down.</p>
+                        <a href="#mystery" class="inline-block text-yellow-300 mt-5 font-semibold">Explore Case →</a>
+                    </div>
+                </article>
+
+                <article class="episode bg-[#102D59] rounded-3xl overflow-hidden border border-white/10 card">
+                    <div class="h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHMj2ivcgLvShTrBkchLYM7eKjN1Sw8p1TS5G8ZTYeaA&s"
+                             alt="Dark trees">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-purple-300 text-xs font-bold">CASE 003</span>
+                        <h3 class="text-2xl font-bold mt-2">The Midnight Shadow</h3>
+                        <p class="text-gray-300 text-sm leading-7 mt-3">A mysterious shadow appears, but what is hiding behind it?</p>
+                        <a href="#mystery" class="inline-block text-yellow-300 mt-5 font-semibold">Explore Case →</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="py-24 bg-[#EAE7FF] px-6">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-12 ani">
+                <span class="text-purple-700 font-bold uppercase tracking-widest text-sm">Adventure Collection</span>
+                <h2 class="text-4xl md:text-6xl font-bold mt-3">Mystery Gallery</h2>
+                <p class="text-gray-600 mt-4">A collection of mysterious places and adventures.</p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 card">
+
+                <div class="gallery-item h-56 md:h-72 overflow-hidden rounded-3xl relative">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJAhcABzsSLN_JkdIoLUI_Nd-dUl4nP5gJ8A1ax-paYw&s=10"
+                         class="w-full h-full object-cover" alt="Forest adventure">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-5">
+                        <h3 class="text-white text-xl font-bold">Dark Forest</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-56 md:h-72 overflow-hidden rounded-3xl relative card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0lVWaWuwROaGS8jRjWyj08FKoDmUQag4tgxQRr9IyOw&s=10"
+                         class="w-full h-full object-cover" alt="Old architecture">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-5">
+                        <h3 class="text-white text-xl font-bold">Old Mansion</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-56 md:h-72 overflow-hidden rounded-3xl relative card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCqX8FZpj_IRJ_V2pw3JlQWZ6SW15iWHH7V1QJBv_GYw&s=10"
+                         class="w-full h-full object-cover" alt="Trees in the forest">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-5">
+                        <h3 class="text-white text-xl font-bold">Hidden Trails</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-56 md:h-72 overflow-hidden rounded-3xl relative card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh06wDVkjNziAXx3YvFsVG1NS5JLzcC938xQOnCWpZjw&s=10"
+                         class="w-full h-full object-cover" alt="Mountain landscape">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-5">
+                        <h3 class="text-white text-xl font-bold">Wild Adventures</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="facts" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-12 ani">
+                <span class="text-teal-700 font-bold uppercase tracking-widest text-sm">Ruh-Roh!</span>
+                <h2 class="text-4xl md:text-6xl font-bold mt-3">Fun Facts</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="card border-2 border-dashed border-yellow-400 rounded-3xl p-8 text-center">
+                    <h3 class="text-2xl font-bold mt-4">Follow The Trail</h3>
+                    <p class="text-gray-600 text-sm leading-7 mt-3">Little clues can reveal big secrets.</p>
+                </div>
+
+                <div class="card border-2 border-dashed border-teal-400 rounded-3xl p-8 text-center">
+                    <h3 class="text-2xl font-bold mt-4">Snack Time</h3>
+                    <p class="text-gray-600 text-sm leading-7 mt-3">Every long adventure needs a snack break.</p>
+                </div>
+
+                <div class="card border-2 border-dashed border-purple-400 rounded-3xl p-8 text-center">
+                    <h3 class="text-2xl font-bold mt-4">Teamwork Wins</h3>
+                    <p class="text-gray-600 text-sm leading-7 mt-3">Everyone has a special skill to contribute.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="px-6 pb-24 ani">
+        <div class="max-w-7xl mx-auto p-10 md:p-16 text-center">
+            <div class="text-6xl"></div>
+            <h2 class="text-4xl md:text-6xl font-bold mt-5">Ready For The Next Adventure?</h2>
+            <p class="text-gray-800 max-w-2xl mx-auto mt-5 leading-7">
+                Join the gang for more laughs, surprising discoveries,
+                strange clues and unforgettable adventures.
+            </p>
+            <a href="#home"
+               class="inline-block bg-[#061B40] text-white px-8 py-4 rounded-full font-bold mt-8 hover:bg-teal-700 transition">
+                Back To The Mystery ↑
+            </a>
+        </div>
+    </section>
+    <footer class="bg-[#061B40] text-white px-6 pt-14 pb-8">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/20">
+
+                <div>
+                    <a href="#home" class="logo text-3xl font-bold text-yellow-300">Scooby-Doo!</a>
+                    <p class="text-gray-300 text-sm leading-7 mt-4">
+                        Same mystery. New adventures. Always together.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-300">Quick Links</h3>
+                    <div class="flex flex-col gap-3 mt-4 text-gray-300 text-sm">
+                        <a href="#about" class="hover:text-yellow-300">About Us</a>
+                        <a href="#characters" class="hover:text-yellow-300">The Gang</a>
+                        <a href="#episodes" class="hover:text-yellow-300">Episodes</a>
+                        <a href="#gallery" class="hover:text-yellow-300">Gallery</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-300">Discover</h3>
+                    <div class="flex flex-col gap-3 mt-4 text-gray-300 text-sm">
+                        <a href="#mystery" class="hover:text-yellow-300">Detective Tips</a>
+                        <a href="#facts" class="hover:text-yellow-300">Fun Facts</a>
+                        <a href="#home" class="hover:text-yellow-300">New Adventures</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-300">Join The Adventure</h3>
+                    <p class="text-gray-300 text-sm leading-7 mt-4">
+                        Explore mysteries, discover new places and follow the clues.
+                    </p>
+                    <a href="#episodes"
+                       class="inline-block bg-yellow-300 text-[#061B40] px-5 py-3 rounded-full font-bold mt-4 hover:bg-white transition">
+                        Start Exploring →
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-7 text-sm text-gray-400">
+                <p>© 2026 Mystery Adventures. Student practice project.</p>
+                <p class="text-yellow-300 text-xl font-bold">Zoinks! 🐾</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
